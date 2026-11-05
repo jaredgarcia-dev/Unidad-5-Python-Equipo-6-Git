@@ -1,9 +1,19 @@
 """Pruebas de las reglas de AutoFix Pro (Equipo 6). Ver tabla en el reporte, casos AF-01 a AF-17."""
 from unittest.mock import Mock
+
 import pytest
-from src.autofix import (validar_anticipo, requiere_anticipo, cobrar_anticipo,
-                         cerrar_orden, TallerCapacidad, AnticipoInsuficiente,
-                         CierreNoPermitido, CapacidadSaturada)
+
+from src.autofix import (
+    AnticipoInsuficiente,
+    CapacidadSaturada,
+    CierreNoPermitido,
+    TallerCapacidad,
+    cerrar_orden,
+    cobrar_anticipo,
+    requiere_anticipo,
+    validar_anticipo,
+)
+
 
 # Regla 1 · US-06 anticipo del 50% si la cotización supera $5,000
 def test_af01_monto_exacto_5000_no_requiere_anticipo():       # límite

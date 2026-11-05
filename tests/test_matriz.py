@@ -1,8 +1,10 @@
 """Pruebas parametrizadas con csv.DictReader (ver LEEME: los CSV no se cargan solos)."""
 import csv
 from pathlib import Path
+
 import pytest
-from src.domain import Order, CustomerHasDebt
+
+from src.domain import CustomerHasDebt, Order
 
 DATOS = Path(__file__).parent / "data" / "pedidos_prueba.csv"
 

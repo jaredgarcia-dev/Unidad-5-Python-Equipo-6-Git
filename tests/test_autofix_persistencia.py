@@ -1,9 +1,11 @@
 """Integración con SQLAlchemy: el cierre de AutoFix se guarda y se confirma con commit."""
 from sqlalchemy import select
 from sqlalchemy.orm import Session
-from src.domain import Order
-from src.repository import make_engine, SqlOrderRepository, OrderRow
+
 from src.autofix import cerrar_orden
+from src.domain import Order
+from src.repository import OrderRow, SqlOrderRepository, make_engine
+
 
 def test_af18_cierre_persistido_tras_commit():
     engine = make_engine()
